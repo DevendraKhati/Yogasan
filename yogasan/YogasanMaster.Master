@@ -1,0 +1,97 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="YogasanMaster.master.cs" Inherits="yogasan.YogasanMaster" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="css/bootstrap.css" />
+    <script src="js/bootstrap.js"></script>
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="js/jquery.validate.js"></script>
+
+    
+
+
+
+
+    <style>
+         nav{
+           
+            font-family:'Times New Roman', Times, serif;
+            font-size:medium;
+            width=100%;
+           
+           
+        }
+         #nav_bar a:active{background-color:brown;}
+          
+          .background-image{
+              -webkit-filter:saturate(3);
+              filter: blur(8px);
+          }
+    </style>
+
+    <script>
+        $(document).ready(function () {
+            $('li.active').removeClass('active');
+            $('a[href="' + location.pathname + '"]').closest('li').addClass('active');
+        });
+    </script>
+
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    
+    </asp:ContentPlaceHolder>
+</head>
+<body  clas="container-fluid" style="background-image:url(res/yog2.jpg);background-repeat:no-repeat;background-size:cover;">
+    
+
+
+<!--================Header Menu Area =================-->
+    <header style="opacity: 0.4; "> 
+            
+        <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Yogasan</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="Index.aspx">Add User</a></li>
+      <li><a href="Attendence.aspx">Attendence</a></li>
+      <li><a href="Timetable.aspx">Time Table</a></li>
+        <li><a href="#">
+            <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label></a></li>
+      
+    </ul>
+      
+      
+      <ul class="nav navbar-right">
+          <li class="btn"><a href="login.aspx">Sign out</a></li>
+      </ul>
+  </div>
+</nav>
+
+    </header>
+    <!--=====================End of Headder===================================================-->
+
+
+
+    
+    <div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+     
+        </asp:ContentPlaceHolder>
+    </div>
+
+
+</body>
+</html>
